@@ -1,0 +1,19 @@
+[package]
+name = "aws-console-open"
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-only"
+
+[lints.clippy]
+pedantic = "warn"
+
+[dependencies]
+aws-config = { version = "1", default-features = false, features = [
+  "default-https-client",
+  "rt-tokio",
+  "sso",
+] }
+reqwest = { version = "0.13", features = ["query"] }
+serde_json = "1"
+serde_urlencoded = "0.7"
+tokio = { version = "1", default-features = false, features = ["macros", "rt"] }
